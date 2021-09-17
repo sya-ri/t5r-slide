@@ -1,321 +1,608 @@
 ---
-# try also 'default' to start simple
 theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
-class: 'text-center'
-# https://sli.dev/custom/highlighters.html
+background: https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg
+class: text-center
 highlighter: shiki
-# some information about the slides, markdown enabled
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-  
-  Learn more at [Sli.dev](https://sli.dev)
+title: t5r
 ---
 
-# Welcome to Slidev
-
-Presentation slides for developers
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
-<a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-  class="abs-br m-6 text-xl icon-btn opacity-50 !border-none !hover:text-white">
-  <carbon-logo-github />
-</a>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
+# Yumemi Server-Side Intern
+## @sya-ri
 
 ---
 
-# What is Slidev?
+# 目次
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-  
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
+- 目的
+- 課題
+- 設計
+- 開発
+  - PullRequest
+  - Livewire について
+- デモ
+- 振り返り
 
 <style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
-}
+  li {
+   	font-size: 1.2em;
+    margin-left: 50px;
+  	padding-bottom: 0.4em;
+  }
+  li li {
+  	font-size: 1em;
+    padding-bottom: 0.1em;
+  }
 </style>
 
 
 ---
 
-# Navigation
+# 目次
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+- 目的 &nbsp; 👈
+- 課題
+- 設計
+- 開発
+  - PullRequest
+  - Livewire について
+- デモ
+- 振り返り
 
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly!
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: Partial<User>) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly use. And add your custom components are also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/custom/#components) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes are able to provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6" v-if="$slidev.nav.currentPage === 7">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div 
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
+<style>
+  li {
+   	font-size: 1.2em;
+    margin-left: 50px;
+  	padding-bottom: 0.4em;
   }
+  li li {
+  	font-size: 1em;
+    padding-bottom: 0.1em;
+  }
+</style>
+
+
+---
+
+# 目的
+
+- PHP をさわれるようにする。
+- 動的型付け言語に慣れたい。
+- 設計を行なって開発する経験を積む。
+- テストを利用して開発する経験を積む。
+- レビューをもらって保守性の高いコードを書く。
+
+<style>
+  li {
+   	font-size: 1.2em;
+    margin-left: 50px;
+  	padding-bottom: 0.4em;
+  }
+</style>
+
+
+---
+
+# 目次
+
+- 目的
+- 課題 &nbsp; 👈
+- 設計
+- 開発
+  - PullRequest
+  - Livewire について
+- デモ
+- 振り返り
+
+<style>
+  li {
+   	font-size: 1.2em;
+    margin-left: 50px;
+  	padding-bottom: 0.4em;
+  }
+  li li {
+  	font-size: 1em;
+    padding-bottom: 0.1em;
+  }
+</style>
+
+---
+
+# 課題
+
+## 「 PHP + Laravel で Twitter like なアプリを作る 」
+
+<br>
+
+|||
+|---|---|
+| 開発環境 💻 | PhpStorm |
+| 実行環境 🔧 | Docker |
+| 使用言語 🌏 | PHP |
+| フレームワーク 🚀 | Laravel |
+| 認証 🔐 | Laravel Breeze |
+| インターフェース 👀 | Brade + Laravel Livewire |
+| データベース 📦 | MySQL |
+
+<br>
+
+
+
+---
+
+# 目次
+
+- 目的
+- 課題
+- 設計 &nbsp; 👈
+- 開発
+  - PullRequest
+  - Livewire について
+- デモ
+- 振り返り
+
+<style>
+  li {
+   	font-size: 1.2em;
+    margin-left: 50px;
+  	padding-bottom: 0.4em;
+  }
+  li li {
+  	font-size: 1em;
+    padding-bottom: 0.1em;
+  }
+</style>
+
+---
+
+# 設計
+
+- 要件定義
+- データベース設計 - dbdiagram.io
+- 画面設計 - figma.com
+- URL設計
+
+<style>
+  li {
+   	font-size: 1.2em;
+  	padding-bottom: 0.4em;
+  }
+</style>
+
+
+
+---
+
+# 目次
+
+- 目的
+- 課題
+- 設計
+- 開発
+  - PullRequest &nbsp; 👈
+  - Livewire について
+- デモ
+- 振り返り
+
+<style>
+  li {
+   	font-size: 1.2em;
+    margin-left: 50px;
+  	padding-bottom: 0.4em;
+  }
+  li li {
+  	font-size: 1em;
+    padding-bottom: 0.1em;
+  }
+</style>
+
+---
+
+# [開発 PR#1](https://github.com/sya-ri/t5r/pull/1)
+
+CONTRIBUTING.md を追加
+
+### ○ 概要
+
+<br>
+
+#### コミットメッセージ
+
+```
+(type): (title)
+(description)
+```
+
+<br>
+
+#### ブランチ
+
+GitHub Flow を採用する。
+
+- `master` は安定しており、デプロイ可能である。
+- `master` に直接プッシュすることはできない。
+- 作業を行う場合は、`master` からブランチを作成する。
+- `master` へのマージはプルリクエストを介して行う。
+- (プルリクエストのマージには２人以上の承認が必要。)
+
+
+---
+
+# [開発 PR#2](https://github.com/sya-ri/t5r/pull/2)
+認証機能の追加
+
+### ○ 概要
+
+<br>
+
+- Laravel Breeze の導入
+
+<br>
+
+### ○ 振り返り
+
+<br>
+
+- 導入するだけで認証周りのコードを自動生成してくれるので楽だった。
+- 自動生成したコードによって、URL設計を追加することになった。
+- 考慮していないカラムがあったので users テーブルの設計を変更することになった。
+
+
+---
+
+# [開発 PR#3](https://github.com/sya-ri/t5r/pull/3)
+Pull Request に対してテストを走らせるようにした
+
+### ○ 概要
+
+<br>
+
+- GitHubActions で PR をテストする。
+
+<br>
+
+### ○ 振り返り
+
+<br>
+
+- GitHubActions 自体は使ってきたので、ベースとなるワークフローファイルは作成できた。
+- Docker に悩まされた。 (tty, docker-compose, ...)
+- ```shell
+  docker-compose exec -T mysql bash -c "mysqladmin --wait --count 60 ping || exit 1"
+  ```
+  という処理で MySQL の起動待機を行なっているが、50%くらいの確率で
+  ```
+  Connection refused
+  ```
+  エラーが出てしまう。
+---
+
+# [開発 PR#4](https://github.com/sya-ri/t5r/pull/4)
+メッセージ一覧機能の追加
+
+### ○ 概要
+
+<br>
+
+- Livewire の導入
+- タイムラインページの追加
+- メッセージ表示の追加
+- いいね機能の仮追加
+  - いいね数の表示はランダム。
+  - 🖤 を押したら ❤️ に切り替わる。
+
+<br>
+
+### ○ 振り返り
+
+<br>
+
+- いいねの機能を仮追加してしまったため、無駄な変更を入れてしまった。
+  - レビューの時に分かりにくくなるので、仮追加が必要かを考える。
+  - Livewire の導入もいいね機能の実装時にすれば良かった。
+
+
+---
+
+# [開発 PR#5](https://github.com/sya-ri/t5r/pull/5)
+依存関係のバージョンを更新
+
+### ○ 概要
+
+<br>
+
+- compose, nodejs の依存関係の更新
+
+<br>
+
+### ○ 振り返り
+
+<br>
+
+- する必要はなかった。
+- 依存関係の更新について話せたのでよかった。
+
+
+---
+
+# [開発 PR#6](https://github.com/sya-ri/t5r/pull/6)
+いいね機能の追加
+
+### ○ 概要
+
+<br>
+
+- 🖤 をクリックすると ❤️ になる。
+- 自分のメッセージにはいいねできない。
+- 🖤, ❤️ の隣にいいねの合計数を表示する。
+
+<br>
+
+### ○ 振り返り
+
+<br>
+
+- Livewire を使うことで、ボタン処理のために route で POST のハンドリングをしなくて良い。
+
+
+---
+
+# [開発 PR#7](https://github.com/sya-ri/t5r/pull/7)
+メッセージ投稿機能の追加
+
+### ○ 概要
+
+<br>
+
+- メッセージを入力して送信ボタンを押すことで、新しいメッセージを投稿できる。
+- メッセージの見やすさのために、先頭・末尾の空白を削除する(trim)。
+- 255文字以下のメッセージを送信できる。
+
+<br>
+
+### ○ 振り返り
+
+<br>
+
+- Livewire のおかげで時間をかけずに実装できた。
+- アルファベット・日本語(UTF8)・絵文字(UTF8MB4) についてテストを書いたことが良かった。
+  - 255文字 → 成功 / 256文字 → 失敗
+  - 制限を設けるならギリギリのパターンについてのテストを書いておくと安心できる。
+
+
+
+---
+
+# 目次
+
+- 目的
+- 課題
+- 設計
+- 開発
+  - PullRequest
+  - Livewire について &nbsp; 👈
+- デモ
+- 振り返り
+
+<style>
+  li {
+   	font-size: 1.2em;
+    margin-left: 50px;
+  	padding-bottom: 0.4em;
+  }
+  li li {
+  	font-size: 1em;
+    padding-bottom: 0.1em;
+  }
+</style>
+
+---
+
+# Livewire について
+
+メッセージ投稿機能
+
+```php{all|7}
+# timeline.blade.php
+<x-app-layout>
+    <!-- 省略 -->
+
+    <div class="md:container md:mx-auto shadow-lg py-2">
+        <div class="m-2">
+            <livewire:create-message-form />
+        </div>
+        
+        <!-- 省略 -->
+        
+    </div>
+</x-app-layout>
+```
+
+- 使いたいところで Livewire コンポーネントを呼び出す。
+- 今回の例では `create-message-form` という名前。
+
+---
+
+# Livewire について
+
+メッセージ投稿機能
+
+```php
+use Livewire\Component;
+
+class CreateMessageForm extends Component
+{
+    const MaxLength = 255;
+
+    public $content = '';
+
+    public function render()
+    {
+        return view('livewire.create-message-form');
+    }
+
+    public function onSubmit()
+    {
+        // 送信ボタンを押した時の処理
+    }
 }
-</script>
+```
 
-<div 
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-  
-[Learn More](https://sli.dev/guide/animations.html#motion)
+- `Livewire\Component` というクラスを継承したクラスを作成する。
+- `render()` というメソッドで `create-message-form.blade.php` を返す。
 
-</div>
 
 ---
 
-# LaTeX
+# Livewire について
 
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
+メッセージ投稿機能
+
+```php{all|11|14}
+# create-message-form.blade.php
+<div>
+    @error('content')
+        <span class="text-red-600 text-sm error">{{ $message }}</span>
+    @enderror
+    <div class="border border-gray-800">
+        <textarea
+        	class="block resize-none border-none w-full p-2"
+            rows="4"
+            maxlength="{{ \App\Http\Livewire\CreateMessageForm::MaxLength }}"
+            wire:model.defer="content"
+            type="text"
+        ></textarea>
+        <button class="border-t border-gray-800 bg-green-300 w-full" wire:click="onSubmit">
+            <p class="text-lg text-center m-1">Submit</p>
+        </button>
+    </div>
+</div>
+```
+
+- `wire:model` を指定すると、指定した名前のプロパティに代入してくれる。
+- `wire:click` を指定すると、クリックした時にそのメソッドを呼び出してくれる。
+
+---
+
+# Livewire について
+
+メッセージ投稿機能
+
+```php
+// テスト
+public function test_message_can_be_created() {
+    $user = User::factory()->create();
+    $this->actingAs($user);
+    $content = Str::random();
+
+    $livewire = Livewire::test(CreateMessageForm::class, ['content' => $content]);
+    $livewire->call('onSubmit');
+
+    $message = Message::all()
+        ->where('user_id', $user->id)
+        ->where('content', $content)
+        ->first();
+    $this->assertNotNull($message);
+}
+```
+
+- コンポーネント単位でテストする。
+- メソッドを呼び出されたものとして、処理を行う。
+
+
+---
+
+# Livewire について
+
+メッセージ投稿機能
+
+### 内部
 
 <br>
 
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
+- `POST /livewire/コンポーネント名` というリクエストを投げてくれる。
+- `wire.model.defer` という指定をするとボタンを押した時に送信する。
+  - `wire.model` だと変更する度にリクエストを投げる（更新処理のため）。
 
 <br>
 
-[Learn more](https://sli.dev/guide/syntax#latex)
+### 利点
 
----
+<br>
 
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-2 gap-4 pt-4 -mb-6">
-
-```mermaid {scale: 0.9}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
+- コンポーネントを作成して、その処理をクラス内に記述できる。
+- `js` を書く必要がない。
+  - クライアント側で完結させたい場合は書く必要がある。
+- めちゃめちゃ簡単に実装ができる。
 
 
 ---
-layout: center
-class: text-center
+
+# 目次
+
+- 目的
+- 課題
+- 設計
+- 開発
+  - PullRequest
+  - Livewire について
+- デモ &nbsp; 👈
+- 振り返り
+
+<style>
+  li {
+   	font-size: 1.2em;
+    margin-left: 50px;
+  	padding-bottom: 0.4em;
+  }
+  li li {
+  	font-size: 1em;
+    padding-bottom: 0.1em;
+  }
+</style>
+
 ---
 
-# Learn More
+# デモ
 
-[Documentations](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
+- AWS EC2 でアプリを動作
+  - Yumemi の VPN を通すことでアクセス可能
+- AWS RDS でデータベースを管理
+  - EC2 からのみアクセス可能で、直接のアクセスはできない。
+- ウェブページ
+
+---
+
+# 目次
+
+- 目的
+- 課題
+- 設計
+- 開発
+  - PullRequest
+  - Livewire について
+- デモ
+- 振り返り &nbsp; 👈
+
+<style>
+  li {
+   	font-size: 1.2em;
+    margin-left: 50px;
+  	padding-bottom: 0.4em;
+  }
+  li li {
+  	font-size: 1em;
+    padding-bottom: 0.1em;
+  }
+</style>
+
+---
+
+# 振り返り
+
+- インターンの目的を達成できたので、とても良かった。
+- 食わず嫌いしていた PHP が３割くらい好きになった。
+- Livewire がとても楽だったので、個人的に使いたいと思った。
+
+<br>
+
+#### → とても良かった！！！！
