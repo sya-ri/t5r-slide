@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "slidev --open",
     "build": "slidev build",
+    "build:gh-page": "slidev build --base t5r-slide",
     "export": "slidev export"
   },
   "dependencies": {
